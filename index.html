@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consultigo</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Login Screen -->
+    <div id="login-screen" class="screen">
+        <nav class="top-nav">
+            <div class="logo">Consultigo</div>
+        </nav>
+        <div class="auth-container">
+            <h1>Sign in</h1>
+            <p class="auth-subtitle">Enter your credentials to access your account</p>
+            <form id="login-form" class="auth-form">
+                <div class="input-group">
+                    <i class="fas fa-envelope"></i>
+                    <input type="email" placeholder="Email">
+                </div>
+                <div class="input-group">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" placeholder="Password">
+                </div>
+                <button type="button" class="sign-in-btn" id="sign-in-button">
+                    <span>Sign in</span>
+                    <i class="fas fa-arrow-right"></i>
+                </button>
+            </form>
+            <p class="signup-link">Don't have an account? <a href="#">Sign up</a></p>
+        </div>
+    </div>
+
+    <!-- Home Screen -->
+    <div id="home-screen" class="screen hidden">
+        <nav class="top-nav">
+            <div class="logo">Consultigo</div>
+            <div class="nav-icons">
+                <i class="fas fa-cog"></i>
+                <i class="fas fa-user" id="profile-icon"></i>
+            </div>
+        </nav>
+        <main class="home-content">
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-briefcase"></i>
+                </div>
+                <h2>Case Studies</h2>
+                <p>Real-world consulting scenarios to test your problem-solving skills</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-calculator"></i>
+                </div>
+                <h2>Guesstimates</h2>
+                <p>Practice market sizing and estimation questions</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-book"></i>
+                </div>
+                <h2>Examples</h2>
+                <p>Learn from detailed example cases and solutions</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-sitemap"></i>
+                </div>
+                <h2>Frameworks</h2>
+                <p>Master essential consulting frameworks and methodologies</p>
+            </div>
+        </main>
+    </div>
+
+    <!-- Case Studies Screen (Question List) -->
+    <div id="practice-screen" class="screen hidden">
+        <nav class="top-nav">
+            <div class="logo">Consultigo</div>
+            <div class="nav-icons">
+                <i class="fas fa-cog"></i>
+                <i class="fas fa-user" id="profile-icon"></i>
+            </div>
+        </nav>
+        <div class="practice-container">
+            <h1>Case Studies</h1>
+            <div class="questions-list-container">
+                <div class="question-item" data-question="market-entry">
+                    <h3>Market Entry Strategy</h3>
+                    <span class="difficulty-tag medium">Medium</span>
+                </div>
+                <div class="question-item" data-question="cost-reduction">
+                    <h3>Cost Reduction Analysis</h3>
+                    <span class="difficulty-tag hard">Hard</span>
+                </div>
+                <div class="question-item" data-question="product-launch">
+                    <h3>Product Launch Strategy</h3>
+                    <span class="difficulty-tag medium">Medium</span>
+                </div>
+                <div class="question-item" data-question="pricing-strategy">
+                    <h3>Pricing Strategy</h3>
+                    <span class="difficulty-tag easy">Easy</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Question Detail Screen -->
+    <div id="question-screen" class="screen hidden">
+        <nav class="top-nav">
+            <div class="logo">Consultigo</div>
+            <div class="nav-icons">
+                <i class="fas fa-cog"></i>
+                <i class="fas fa-user" id="profile-icon"></i>
+            </div>
+        </nav>
+        <div class="question-container">
+            <button class="back-btn" id="back-to-questions">
+                <i class="fas fa-arrow-left"></i> Back to questions
+            </button>
+            <div class="question-content">
+                <h2 id="question-title">Market Entry Strategy</h2>
+                <span id="question-difficulty" class="difficulty-tag medium">Medium</span>
+                <p id="question-description">A leading tech company is considering entering the smart home market. How would you evaluate this opportunity?</p>
+                <textarea id="answer-input" placeholder="Type your solution here..."></textarea>
+                <button class="submit-btn">
+                    <i class="fas fa-paper-plane"></i>
+                    Submit Solution
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Guesstimates Screen (List) -->
+    <div id="guesstimates-screen" class="screen hidden">
+        <nav class="top-nav">
+            <div class="logo">Consultigo</div>
+            <div class="nav-icons">
+                <i class="fas fa-cog"></i>
+                <i class="fas fa-user" id="profile-icon"></i>
+            </div>
+        </nav>
+        <div class="practice-container">
+            <h1>Guesstimates</h1>
+            <div class="questions-list-container">
+                <div class="question-item" data-guesstimate="pizza-nyc">
+                    <h3>Pizza Slices in NYC</h3>
+                    <span class="difficulty-tag medium">Medium</span>
+                </div>
+                <div class="question-item" data-guesstimate="golf-balls">
+                    <h3>Golf Balls in America</h3>
+                    <span class="difficulty-tag hard">Hard</span>
+                </div>
+                <div class="question-item" data-guesstimate="gas-stations">
+                    <h3>Gas Stations in USA</h3>
+                    <span class="difficulty-tag medium">Medium</span>
+                </div>
+                <div class="question-item" data-guesstimate="piano-tuners">
+                    <h3>Piano Tuners in Chicago</h3>
+                    <span class="difficulty-tag easy">Easy</span>
+                </div>
+                <div class="question-item" data-guesstimate="coffee-consumption">
+                    <h3>Coffee Cups Consumed Daily</h3>
+                    <span class="difficulty-tag hard">Hard</span>
+                </div>
+                <div class="question-item" data-guesstimate="smartphone-market">
+                    <h3>Smartphone Market Size</h3>
+                    <span class="difficulty-tag medium">Medium</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Guesstimate Detail Screen -->
+    <div id="guesstimate-detail-screen" class="screen hidden">
+        <nav class="top-nav">
+            <div class="logo">Consultigo</div>
+            <div class="nav-icons">
+                <i class="fas fa-cog"></i>
+                <i class="fas fa-user" id="profile-icon"></i>
+            </div>
+        </nav>
+        <div class="question-container">
+            <button class="back-btn" id="back-to-guesstimates">
+                <i class="fas fa-arrow-left"></i> Back to guesstimates
+            </button>
+            <div class="question-content">
+                <h2 id="guesstimate-title">Pizza Slices in NYC</h2>
+                <span id="guesstimate-difficulty" class="difficulty-tag medium">Medium</span>
+                <p id="guesstimate-description">Estimate the number of pizza slices sold each day in New York City. Break down your approach and provide a step-by-step calculation.</p>
+                <textarea id="guesstimate-answer" placeholder="Break down your estimation step by step..."></textarea>
+                <button class="submit-btn">
+                    <i class="fas fa-paper-plane"></i>
+                    Submit Calculation
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Frameworks Screen -->
+    <div id="frameworks-screen" class="screen hidden">
+        <nav class="top-nav">
+            <div class="logo">Consultigo</div>
+            <div class="nav-icons">
+                <i class="fas fa-cog"></i>
+                <i class="fas fa-user" id="profile-icon"></i>
+            </div>
+        </nav>
+        <div class="frameworks-container">
+            <h1>Consulting Frameworks</h1>
+            <div class="frameworks-grid">
+                <div class="framework-card">
+                    <h2>Profitability Framework</h2>
+                    <p>A structured approach to analyze a company's profitability</p>
+                    <ul>
+                        <li>Revenue Analysis (Price × Volume)</li>
+                        <li>Cost Structure (Fixed vs Variable)</li>
+                        <li>Market Factors</li>
+                        <li>Operational Efficiency</li>
+                    </ul>
+                </div>
+                <div class="framework-card">
+                    <h2>Market Entry Framework</h2>
+                    <p>Evaluate potential market opportunities and entry strategies</p>
+                    <ul>
+                        <li>Market Attractiveness</li>
+                        <li>Competitive Landscape</li>
+                        <li>Internal Capabilities</li>
+                        <li>Entry Mode Selection</li>
+                    </ul>
+                </div>
+                <div class="framework-card">
+                    <h2>Business Situation Framework</h2>
+                    <p>Analyze overall business context and challenges</p>
+                    <ul>
+                        <li>Company Position</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Profile Screen -->
+    <div id="profile-screen" class="screen hidden">
+        <nav class="top-nav">
+            <div class="logo">Consultigo</div>
+            <div class="nav-icons">
+                <i class="fas fa-cog"></i>
+            </div>
+        </nav>
+        <div class="profile-container">
+            <div class="profile-header">
+                <div class="profile-avatar">
+                    <i class="fas fa-user-circle"></i>
+                </div>
+                <h1 id="profile-name">Alex Johnson</h1>
+                <p id="profile-email">alex.johnson@example.com</p>
+                <div class="profile-stats">
+                    <div class="stat-item">
+                        <span class="stat-value">7</span>
+                        <span class="stat-label">Questions Solved</span>
+                    </div>
+                </div>
+            </div>
+            <div class="solved-questions-section">
+                <h2>Recently Solved</h2>
+                <div class="solved-questions-list">
+                    <div class="solved-item">
+                        <div class="solved-item-header">
+                            <h3>Market Entry Strategy</h3>
+                            <span class="solved-date">Jun 15, 2023</span>
+                        </div>
+                        <span class="difficulty-tag medium">Medium</span>
+                        <p class="solved-type">Case Study</p>
+                    </div>
+                    <div class="solved-item">
+                        <div class="solved-item-header">
+                            <h3>Pizza Slices in NYC</h3>
+                            <span class="solved-date">Jun 10, 2023</span>
+                        </div>
+                        <span class="difficulty-tag medium">Medium</span>
+                        <p class="solved-type">Guesstimate</p>
+                    </div>
+                    <div class="solved-item">
+                        <div class="solved-item-header">
+                            <h3>Pricing Strategy</h3>
+                            <span class="solved-date">May 30, 2023</span>
+                        </div>
+                        <span class="difficulty-tag easy">Easy</span>
+                        <p class="solved-type">Case Study</p>
+                    </div>
+                    <div class="solved-item">
+                        <div class="solved-item-header">
+                            <h3>Piano Tuners in Chicago</h3>
+                            <span class="solved-date">May 28, 2023</span>
+                        </div>
+                        <span class="difficulty-tag easy">Easy</span>
+                        <p class="solved-type">Guesstimate</p>
+                    </div>
+                    <div class="solved-item">
+                        <div class="solved-item-header">
+                            <h3>Product Launch Strategy</h3>
+                            <span class="solved-date">May 20, 2023</span>
+                        </div>
+                        <span class="difficulty-tag medium">Medium</span>
+                        <p class="solved-type">Case Study</p>
+                    </div>
+                    <div class="solved-item">
+                        <div class="solved-item-header">
+                            <h3>Gas Stations in USA</h3>
+                            <span class="solved-date">May 15, 2023</span>
+                        </div>
+                        <span class="difficulty-tag medium">Medium</span>
+                        <p class="solved-type">Guesstimate</p>
+                    </div>
+                    <div class="solved-item">
+                        <div class="solved-item-header">
+                            <h3>Cost Reduction Analysis</h3>
+                            <span class="solved-date">May 10, 2023</span>
+                        </div>
+                        <span class="difficulty-tag hard">Hard</span>
+                        <p class="solved-type">Case Study</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html> 
